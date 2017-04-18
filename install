@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "Do you have the MCSD libraries installed? [Yes, No, Unusre]"
+read inst
+case $inst in
+Yes);;
+No) echo "Please follow these instuctions to install."; gksudo --message "I need tobe root to continue."; cd /mcsd; bash autoinstall.sh;;
+Unsure) echo "Running Installer. Please be patiane.
+esac
+mcsd-config --report-err --try-root --ask-gksudo
+#EOF
